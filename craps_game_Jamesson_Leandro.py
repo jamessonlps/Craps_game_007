@@ -31,7 +31,7 @@ while jogo_valendo:
         jogo_valendo = False
     else:
         print('Para ter certeza: quer prosseguir ou desistir? Para continuar, digite "sim"; caso contrário, "não".')
-        resposta1 = input()
+        resposta1 = input('Sua resposta: ')
         print('')
 
         if resposta1 == 'não':
@@ -95,7 +95,7 @@ while jogo_valendo:
                             print('')
                     
                     elif resposta2 == 'field':   # Entrando em Field
-                        print('Você escolheu Field. Se os dados somarem 5, 6, 7 ou 8, você perde tudo. Se somarem 3, 4, 9, 10 ou 11, você ganha o mesmo valor da aposta.')
+                        print('Você escolheu Field. Se os dados somarem 5, 6, 7 ou 8, você perde TUDO. Se somarem 3, 4, 9, 10 ou 11, você ganha o mesmo valor da aposta.')
                         print('Se tirar 2, ganha o dobro da aposta. E por último, se tirar 12, ganha o tripo!')
                         dado_1 = random.randint(1, 6)
                         dado_2 = random.randint(1, 6)
@@ -103,4 +103,28 @@ while jogo_valendo:
                         print('')
                         
                         if soma_dados == 5 or soma_dados == 6 or soma_dados == 7 or soma_dados == 8:
-                            print('Uma pena, você perdeu sua aposta')    # Perde a aposta ou perde tudo??
+                            print('Não foi dessa vez, você perdeu absolutamente tudo!')
+                            fichas_em_maos = 0
+                            jogo_valendo = False
+                        elif soma_dados == 3 or soma_dados == 4 or soma_dados == 9 or soma_dados == 10 or soma_dados == 11:
+                            print('Você ganhou o equivalente à sua aposta!')
+                            fichas_em_maos = fichas_em_maos + aposta_jogador
+                            print('Você agora tem {0} fichas'.format(fichas_em_maos))
+                            print('')
+                        elif soma_dados == 2:
+                            print('Você ganhou o dobro da sua aposta!')
+                            fichas_em_maos = fichas_em_maos + 2*aposta_jogador
+                            print('Você agora tem {0} fichas'.format(fichas_em_maos))
+                            print('')
+                        else:   # Isto é, tira 12
+                            print('Você ganhou o triplo da sua aposta!')
+                            fichas_em_maos = fichas_em_maos + 3*aposta_jogador
+                            print('Você agora tem {0} fichas'.format(fichas_em_maos))
+                            print('')
+                   
+                    elif resposta2 == 'line bet':
+                        print('Você escolheu Pass Line Bet. ')
+                        dado_1 = random.randint(1, 6)
+                        dado_2 = random.randint(1, 6)
+                        soma_dados = dado_1 + dado_2
+                        print('')
