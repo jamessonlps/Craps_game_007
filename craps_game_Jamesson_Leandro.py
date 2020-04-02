@@ -123,8 +123,39 @@ while jogo_valendo:
                             print('')
                    
                     elif resposta2 == 'line bet':
-                        print('Você escolheu Pass Line Bet. ')
+                        print('Você escolheu Pass Line Bet. Se os dados somarem 7 ou 11, você ganha a aposta')
+                        print('Se os dados somarem 2, 3 ou 12 - craps - você perde.')
+                        print('Se a soma der 4, 5, 6, 8, 9 ou 10, você pulará para a fase "Points".')
                         dado_1 = random.randint(1, 6)
                         dado_2 = random.randint(1, 6)
                         soma_dados = dado_1 + dado_2
                         print('')
+
+                        if soma_dados == 7 or soma_dados == 11:
+                            print('Muito bem, você ganhou essa!')
+                            fichas_em_maos = fichas_em_maos + aposta_jogador
+                            print('Agora você tem {0} fichas'.format(fichas_em_maos))
+                            print('')
+                        elif soma_dados == 2 or soma_dados == 3 or soma_dados == 12:
+                            print('CRAPS! Você perdeu sua aposta :(')
+                            fichas_em_maos = fichas_em_maos - aposta_jogador
+                            print('Agora você tem {0} fichas'.format(fichas_em_maos))
+                            print('')
+                        else:
+                            print('Você caiu na 2° fase do jogo! Seja muito bem vindo à fase "Points"!!!')  # Entrada na fase Points
+                            print('O último sorteio de dados se tornou o Point.')
+                            print('Agora, se a próxima jogada de dados resultar no Point, você ganha sua aposta.')
+                            print('Mas... se a nova soma dos dados resultar em 7... Uma pena, terá sido sua última rodada no jogo :(')
+                            print('Além disso, você só sairá dessa fase tirando o Point ou o 7.')
+                            print('')
+                            print('Agora, suas opções de aposta são as mesmas, exceto a Pass Line Bet, lembrando da regra acima do Points.')
+                            print('Você deve escolher o tipo de aposta que irá começar nessa fase.')
+                            print('')
+                            print('1. Field - para escolhê-la, digite "field"')
+                            print('2. Any Craps - para escolhê-la, digite "craps"')
+                            print('3. Twelve - para escolhê-la, digite "twelve"')
+                            resposta3 = input('Sua escolha: ')
+                            points_valendo = True
+                            Point = soma_dados
+
+                            while points_valendo:
