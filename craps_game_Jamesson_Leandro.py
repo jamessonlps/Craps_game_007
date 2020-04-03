@@ -200,7 +200,7 @@ while jogo_valendo:
                                         print('Você escolheu Any Craps. Se seus dados somarem 2, 3 ou 12, parabéns. Se não, você perde.')
                                         print('')
                                         
-                                        if soma_dados == 2 or soma_dados == 3 or soma_dados == 12:
+                                        if nova_soma_dados == 2 or nova_soma_dados == 3 or nova_soma_dados == 12:
                                             print('Woooow, você ganhou!!!)
                                             fichas_em_maos = fichas_em_maos + 7*aposta_jogador
                                             valor_ganho = 7*aposta_jogador
@@ -211,3 +211,25 @@ while jogo_valendo:
                                             fichas_em_maos = fichas_em_maos - aposta_jogador
                                             print('Agora, você tem {0} fichas'.format(fichas_em_maos))
                                             print('')
+
+                                    elif resposta3 == 'twelve':
+                                        print('Você escolheu Twelve. Os dados serão lançados. Se os dados somarem 12, você é sortudo, se não, perde sua aposta')
+                                        print('')
+
+                                        if nova_soma_dados == 12:
+                                            print('Woooow, você ganhou!!!)
+                                            fichas_em_maos = fichas_em_maos + 30*aposta_jogador
+                                            valor_ganho = 30*aposta_jogador
+                                            print('Você ganhou {0} fichas. Agora, você tem {1} fichas'.format(valor_ganho, fichas_em_maos))
+                                            print('')
+                                        else:
+                                            print('Uma pena, você perdeu sua aposta.')
+                                            fichas_em_maos = fichas_em_maos - aposta_jogador
+                                            print('Agora, você tem {0} fichas'.format(fichas_em_maos))
+                                            print('')
+
+                                    elif resposta3 == 'points':
+                                        print('Você escolheu arriscar sua sorte no Points. Lembre-se: se sair um 7, fim de jogo...')
+                                        print('')
+
+                                        if nova_soma_dados == Point:
