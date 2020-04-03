@@ -52,6 +52,7 @@ while jogo_valendo:
 
                 if aposta_jogador > fichas_em_maos:
                     print('Você não tem essa quantidade de fichas. Terá de passar pelo processo inicial novamente.')
+                    print('')
                 else:
                     
                     if resposta2 == 'twelve':    # Entrando na Twelve
@@ -144,11 +145,9 @@ while jogo_valendo:
                         else:
                             print('Você caiu na 2° fase do jogo! Seja muito bem vindo à fase "Points"!!!')  # Entrada na fase Points
                             print('O último sorteio de dados se tornou o Point.')
-                            print('Agora, se a próxima jogada de dados resultar no Point, você ganha sua aposta.')
-                            print('Mas... se a nova soma dos dados resultar em 7... Uma pena, terá sido sua última rodada no jogo :(')
-                            print('Além disso, você só sairá dessa fase tirando o Point ou o 7.')
-                            print('')
-                            print('Agora, suas opções de aposta são as mesmas, exceto a Pass Line Bet, lembrando da regra acima do Points.')
+                            print('Você poderá escolher as apostas da fase anterior, exceto a Pass Line Bet, ou marcar o Point.')
+                            print('No Point, se a nova soma dos dados resultar em 7... Uma pena, terá sido sua última rodada no jogo :(')
+                            print('Além disso, você só sairá dessa fase tirando o Point ou o 7... ou perdendo as fichas nas outras apostas.')
                             print('')
                             points_valendo = True
                             Point = soma_dados
@@ -233,3 +232,16 @@ while jogo_valendo:
                                         print('')
 
                                         if nova_soma_dados == Point:
+                                            print('Na mosca! Você ganhou a sua aposta e começará uma nova rodada na fase "Come Out".')
+                                            fichas_em_maos = fichas_em_maos + aposta_jogador
+                                            print('Agora você tem {0} fichas.'.format(fichas_em_maos))
+                                            points_valendo = False
+                                            print('')
+                                        elif nova_soma_dados == 7:
+                                            print('Esse foi o maior azar da sua noite! Você perdeu tudo!! Por hoje é isso, até a próxima!')
+                                            fichas_em_maos = 0
+                                            points_valendo = False
+                                            jogo_valendo = False
+                                        else:
+                                            print('Parece que não deu em nada, você não ganhou nem perdeu... Por enquanto.')
+                                            
