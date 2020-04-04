@@ -1,4 +1,5 @@
 # Exercício Problema 1 - Design de Software
+# Professor: Andrew Toshiaki Nakayama Kurauchi
 # Aluno: Jamesson Leandro Paiva Santos
 # Turma: B
 # Curso: Engenharia de Computação
@@ -37,7 +38,7 @@ while jogo_valendo:
         print('--------------------------------------------------------------------------------------------------------------')
 
         if resposta1 == 'não':
-            print('Tudo bem, agradecemos a sua participação. Volte sempre!')
+            print('Tudo bem, agradecemos a sua participação.')
             jogo_valendo = False
         elif resposta1 == 'sim':
             print('Boa decisão. Começaremos com a 1° fase chamada "Come Out". Você tem quatro escolhas de apostas:')
@@ -267,7 +268,7 @@ while jogo_valendo:
 
 print('')
 print('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
-print('O Cassino James agradece sua participação e, independente de seu resultado final, esperamos vê-lo novamente aqui.')
+print('O Cassino James agradece sua participação e, independente de seu resultado final, esperamos vê-lo(a) novamente aqui.')
 print('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
 
 print('')
